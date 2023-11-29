@@ -1,7 +1,8 @@
 import logging
 import random  # Import the random module
 from logic import make_empty_board, get_winner, other_player
-
+import csv
+from datetime import datetime
 logging.basicConfig(
     filename='logs/happyjoel_game_log.log',
     level=logging.INFO
@@ -31,6 +32,8 @@ class TicTacToeGame:
         self.players = [player1, player2]
         self.current_player_index = 0
         self.winner = None
+        self.move_history = {'X': [], 'O': []}  # To track moves of each player
+        self.total_moves = 0
 
     def switch_player(self):
         self.current_player_index = (self.current_player_index + 1) % 2
@@ -57,12 +60,23 @@ class TicTacToeGame:
             if self.board[row][col] is None:
                 self.board[row][col] = player.symbol
                 self.winner = get_winner(self.board)
+                self.move_history[player.symbol].append((row, col))  # Record the move
+                self.total_moves += 1
             else:
                 print("Invalid move. That position is already occupied. Try again.")
         else:
             print("Invalid move. No available moves. Try again.")
 
         self.switch_player()
+    
+    def record_game_details(self):
+        with open('logs/game_results.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            winner = self.winner if self.winner else 'Draw'
+            moves_x = len(self.move_history['X'])
+            moves_o = len(self.move_history['O'])
+            writer.writerow([timestamp, winner, self.total_moves, moves_x, moves_o])
 
     def play_game(self):
         while self.winner is None:
@@ -72,10 +86,12 @@ class TicTacToeGame:
 
         if self.winner:
             print(f"Player {self.winner} wins!")
-            logging.info('You win!')
+            logging.info(f'Player {self.winner} wins!')
         else:
             print("It's a draw!")
             logging.info("It's a draw!")
+
+        self.record_game_details()  # Add this line to record the game outcome
 
 if __name__ == '__main__':
     player1_symbol = 'X'

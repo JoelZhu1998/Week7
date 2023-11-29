@@ -1,1 +1,39 @@
+INFO:root:Player X made a move at (0, 0)
+INFO:root:Player O made a move at (1, 0)
+INFO:root:Player X made a move at (1, 1)
+INFO:root:Player O made a move at (2, 1)
+INFO:root:Player X made a move at (2, 2)
 INFO:root:You win!
+INFO:root:Player X made a move at (2, 2)
+INFO:root:Player O made a move at (1, 2)
+INFO:root:Player O made a move at (2, 0)
+INFO:root:Player X made a move at (2, 1)
+INFO:root:Player O made a move at (0, 1)
+INFO:root:Player X made a move at (0, 0)
+INFO:root:Player O made a move at (1, 1)
+INFO:root:Player X made a move at (1, 0)
+INFO:root:Player O made a move at (0, 2)
+INFO:root:You win!
+INFO:root:Player X made a move at (2, 2)
+INFO:root:Player O made a move at (2, 1)
+INFO:root:Player X made a move at (1, 1)
+INFO:root:Player O made a move at (1, 2)
+INFO:root:Player X made a move at (0, 0)
+INFO:root:You win!
+INFO:root:Player X made a move at (1, 1)
+INFO:root:Player O made a move at (1, 2)
+INFO:root:Player X made a move at (0, 0)
+INFO:root:Player O made a move at (2, 0)
+INFO:root:Player X made a move at (2, 2)
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player X wins!
+INFO:root:Player O wins!
+INFO:root:Player O wins!
+INFO:root:Player O wins!
